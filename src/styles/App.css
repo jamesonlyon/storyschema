@@ -58,14 +58,59 @@ main {
 section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+
   align-items: center;
+  justify-content: space-evenly;
 
   width: 50%;
   height: 50vh;
   margin: 0 24px 0 0;
 
-  border: 1px solid black;
-  border-radius: 4px;
+}
 
+.schemaListItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  height: 20%;
+  width: 100%;
+
+  margin: 0 0 24px 0;
+  padding: 0;
+
+  background-color: #323232;
+  box-shadow:4px 4px #25B6BC;
+  border-radius: 4px;
+  
+  transition: box-shadow 0.125s ease-out;
+}
+
+.schemaListItem:hover {
+  box-shadow: 8px 8px #25B6BC;
+}
+
+.getSchemaBtn {
+  height: 36px;
+  width: 144px;
+
+  font-family: "Source Code Pro", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+
+  color: #1c1c1c;
+  background-color: #25B6BC;
+  
+  border: none;
+  border-radius: 4px;
+  box-shadow: 4px 4px #181818;
+
+  align-self: flex-end;
+  transition: box-shadow 0.125s ease-out;
+}
+
+.getSchemaBtn:hover {
+  box-shadow: 8px 8px #181818;
 }

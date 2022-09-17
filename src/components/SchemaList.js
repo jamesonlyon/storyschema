@@ -8,18 +8,37 @@ class SchemaList extends Component {
         super(props);
     }
 
+    doThing() {
+        console.log("woo");    
+    }
+
     state = {
-        item1: '',
-        item2: 'generate to fill',
-        item3: 'generate to fill',
-        item4: 'generate to fill'
+        schemaData: {
+            item1: '',
+            item2: '',
+            item3: '',
+            item4: ''
+        }
     }
 
     render() { 
+        const data = this.state.schemaData;
+        let random = genRandomSchema(storySchemas);
+
         return (
             <section className="schemaList">
-                SchemaList component mounted here...
-                <SchemaListItem content={this.state.item1} />
+                
+                <SchemaListItem tag='type'   content={data.item1} />
+                <SchemaListItem tag='media'  content={data.item2} />
+                <SchemaListItem tag='length' content={data.item3} />
+                <SchemaListItem tag='struct' content={data.item4} />
+                <button
+                    className="getSchemaBtn"
+                    onClick={this.doThing()}
+                >
+                    Generate
+                </button>
+
             </section>
         );
     }
