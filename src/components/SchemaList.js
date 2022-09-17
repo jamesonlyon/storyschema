@@ -6,10 +6,8 @@ import SchemaListItem from './SchemaListItem.js'
 class SchemaList extends Component {
     constructor(props) {
         super(props);
-    }
 
-    doThing() {
-        console.log("woo");    
+        this.generateSchemas = this.generateSchemas.bind(this);
     }
 
     state = {
@@ -19,6 +17,18 @@ class SchemaList extends Component {
             item3: '',
             item4: ''
         }
+    }
+
+    generateSchemas(e) {
+        let data = genRandomSchema(storySchemas);
+        this.setState({
+            schemaData: {
+                item1: data.type,
+                item2: data.media,
+                item3: data.length,
+                item4: data.struct
+            }
+        })
     }
 
     render() { 
@@ -33,9 +43,8 @@ class SchemaList extends Component {
                 <SchemaListItem tag='length' content={data.item3} />
                 <SchemaListItem tag='struct' content={data.item4} />
                 <button
-                    className="getSchemaBtn"
-                    onClick={this.doThing()}
-                >
+                    onClick={this.generateSchemas}
+                    className="getSchemaBtn">
                     Generate
                 </button>
 

@@ -108,9 +108,10 @@ section {
   box-shadow: 4px 4px #181818;
 
   align-self: flex-end;
-  transition: box-shadow 0.125s ease-out;
+  position: relative;
+  transition: width 0.125s ease-out;
 }
 
 .getSchemaBtn:hover {
-  box-shadow: 8px 8px #181818;
+  width: 50%;
 }
