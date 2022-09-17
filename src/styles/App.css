@@ -1,15 +1,70 @@
+/*
+  -- BASE UNITS --
+
+  This app is built using 12px as the base unit of measurement.
+  You can assume that all pixel-based measurements will increment
+  12 pixels at a time, including font sizes, line heights, etc.
+
+*/
+
 .App {
   background-color: #1c1c1c;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100vh;
   width: 100vw;
 
   color: white;
   font-family: "Source Code Pro", sans-serif;
-  text-align: center;
 }
 
-h1 {
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: 50%;
+  margin: 0 auto;
+  text-transform: lowercase;
+}
+
+header h1 {
   font-size: 48px;
+  font-weight: 800;
   line-height: 36px;
+  margin: 0;
+  padding: 0;
+}
+
+header sub {
+  font-size: 12px;
+  line-height: 14px;
+  opacity: 36%;
+  margin: 0;
+  padding: 0 12px;
+  width: 33%;
+  align-self: flex-end;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 50%;
+  height: 50vh;
+  margin: 0 24px 0 0;
+
+  border: 1px solid black;
+  border-radius: 4px;
+
 }

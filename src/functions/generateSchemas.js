@@ -1,3 +1,10 @@
+/**
+ * function: genRandomSchema
+ * 
+ * Given an object containing a set of keys and possible values
+ * Return an object containing all keys and one set of random values
+ */
+
 export function genRandomSchema(schemaObject) {
 
     // create a schema object to return
@@ -19,3 +26,9 @@ export function genRandomSchema(schemaObject) {
     // return an object containing the 4 fields
     return randSchema;
 };
+
+/**
+ * Crib sheet
+ * 
+ * TODO: randSchema could be generated programatically by iterating through keys
+ */
