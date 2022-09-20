@@ -1,5 +1,6 @@
 <script>
     import { schemaData } from "../data/schemaData.js";
+    import { lengthData } from "../data/lengthData.js";
 
     function makeCombo(srcObj) {
         // create an object to return
@@ -12,6 +13,13 @@
             // store the chosen random value in the returned object
             comboObject[k] = srcObj[k][randIndex];
         }
+
+        const media = comboObject['media'];
+        const verboseLen = comboObject['length'];
+        console.log(media, length)
+        console.log(lengthData[media][verboseLen])
+
+        comboObject['length'] = lengthData[media][verboseLen];
 
         // return an object containing one value per srcObj key
         return comboObject;
@@ -48,7 +56,7 @@
                     {#if schema.type}
 
                         (Your story title here)<br/>
-                        A {schema.type} {schema.media} in {schema.length}<br/><br/><br/>
+                        A {schema.type} {schema.media} that's {schema.length} long<br/><br/><br/>
                         
                         --- Outline ---<br/><br/>
                         This is where the template will inset.
