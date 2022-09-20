@@ -16,8 +16,6 @@
 
         const media = comboObject['media'];
         const verboseLen = comboObject['length'];
-        console.log(media, length)
-        console.log(lengthData[media][verboseLen])
 
         comboObject['length'] = lengthData[media][verboseLen];
 
@@ -27,7 +25,7 @@
 
     function handleClick() {
         schema = makeCombo(schemaData);
-        console.log(schema);
+        // console.log(schema);
     };
 
     $: schema = {};
