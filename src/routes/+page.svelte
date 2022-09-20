@@ -1,5 +1,5 @@
 <script>
-    import { storySchemas } from "../data/schemaData.js";
+    import { schemaData } from "../data/schemaData.js";
 
     function makeCombo(srcObj) {
         // create an object to return
@@ -18,7 +18,7 @@
     };
 
     function handleClick() {
-        schema = makeCombo(storySchemas);
+        schema = makeCombo(schemaData);
         console.log(schema);
     };
 

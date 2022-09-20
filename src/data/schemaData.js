@@ -1,22 +1,37 @@
-export const storySchemas = {
+export const schemaData = {
     type: [
-        'chaotic romp',
-        'reeves documentary',
+        'chaotic',
+        'documentary-style',
         'comedy',
-        'drama'
+        'drama',
+        'thriller',
+        'mystery',
+        'horror',
+        'true crime',
+        'sportscast',
+        'romance',
+        'parody',
+        'satire'
     ],
     media: [
         'film',
-        'article', 
-        'song'
+        'blog post', 
+        'song',
+        'story'
     ],
     length: [
-        '60 seconds',
-        '300 words',
-        '5 seconds'
+        'xxs',
+        'xs',
+        'sm',
+        'md',
+        'lg',
+        'xl',
+        'xxl'
     ],
     struct: [
         'heroes journey',
-        'now-then-now'
+        'now-then-now',
+        'why-how-what',
+        'presentation form'
     ]
 };
