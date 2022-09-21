@@ -33,7 +33,7 @@
         console.log(outline);
 
         // create the verbose schema text to pass to app, clipboard
-        verboseSchema = `##(Your story title here)
+        verboseSchema = `## (Your story title here)
             A ${schema.type} ${schema.media} that's ${schema.length} long
             \n
             ---\n
@@ -101,4 +101,5 @@
         </main>
     </div>
 </div>
+
 
