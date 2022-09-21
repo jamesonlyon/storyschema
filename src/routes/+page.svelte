@@ -1,6 +1,7 @@
 <script>
     import { schemaData } from "../data/schemaData.js";
     import { lengthData } from "../data/lengthData.js";
+    import { structureData } from "../data/structureData.js";
 
     function makeCombo(srcObj) {
         // create an object to return
@@ -24,13 +25,19 @@
     };
 
     function handleClick() {
+        // create the main schema object
         schema = makeCombo(schemaData);
+
+        // grab a large block of text representing the story outline
+        const outline = structureData[schema.struct];
+
+        // create the verbose schema text to pass to app, clipboard
         verboseSchema = `
-        (Your story title here)
-        Create a ${schema.type} ${schema.media} that's ${schema.length} long
-        \n
-        --- Outline ---
-        This is where the template variable will inset`;
+            ##(Your story title here)
+            Create a ${schema.type} ${schema.media} that's ${schema.length} long
+            \n
+            --- Outline ---\n
+            ${outline}`;
     };
 
     function writeToClipboard() {
@@ -72,11 +79,7 @@
                     </button>
                     {#if schema.type}
 
-                        (Your story title here)<br/>
-                        A {schema.type} {schema.media} that's {schema.length} long<br/><br/><br/>
-                        
-                        --- Outline ---<br/><br/>
-                        This is where the template will inset.
+                        {@html verboseSchema.replace(/\n/gi, '<br/>')}
 
                     {:else}
                         Click generate to start..

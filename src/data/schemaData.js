@@ -31,7 +31,7 @@ export const schemaData = {
     struct: [
         'heroes journey',
         'now-then-now',
-        'why-how-what',
+        'what-how-why',
         'presentation form'
     ]
 };
