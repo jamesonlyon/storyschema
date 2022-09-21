@@ -25,10 +25,25 @@
 
     function handleClick() {
         schema = makeCombo(schemaData);
-        // console.log(schema);
+        verboseSchema = `
+        (Your story title here)
+        Create a ${schema.type} ${schema.media} that's ${schema.length} long
+        \n
+        --- Outline ---
+        This is where the template variable will inset`;
     };
 
+    function writeToClipboard() {
+        navigator.clipboard.writeText(verboseSchema).then(() => {
+            console.log('copied to clipboard');
+        }, () => {
+            console.error('could not copy to clipboard');
+        });
+    }
+
     $: schema = {};
+    $: verboseSchema = '';
+
 </script>
 
 <div class="h-screen w-screen bg-gradient-to-r from-base-100 to-base-300">
@@ -50,7 +65,11 @@
                 </section><!-- left section -->
 
                 <section class="relative bg-neutral text-neutral-content w-1/2 p-12 rounded text-sm font-mono">
-                    <button class="absolute btn btn-sm top-2 right-2 text-xs p-2 bg-primary text-primary-content hover:text-neutral-content rounded">copy</button>
+                    <button
+                        class="absolute btn btn-sm top-2 right-2 text-xs p-2 bg-primary text-primary-content hover:text-neutral-content rounded"
+                        on:click={writeToClipboard}>
+                        copy
+                    </button>
                     {#if schema.type}
 
                         (Your story title here)<br/>
@@ -68,3 +87,4 @@
         </main>
     </div>
 </div>
+
