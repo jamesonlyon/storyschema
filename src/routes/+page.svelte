@@ -55,9 +55,9 @@
 
 </script>
 
-<div class="h-screen w-screen bg-gradient-to-b from-base-100 to-base-300">
-    <div class="container flex flex-row mx-auto h-screen w-3/5 justify-center items-center font-mono">
-        <main class="flex flex-col justify-center w-full h-2/3 gap-4"><!-- main -->
+
+    <div class="container flex flex-row mx-auto h-screen w-full lg:w-4/5 xl:w-3/5 items-start lg:items-center font-mono">
+        <main class="flex flex-col justify-center w-full lg:h-2/3 gap-4 p-8 lg:p-0"><!-- main -->
             
             <!-- App name & description-->
             <div class="flex flex-row w-full gap-4 justify-start">
@@ -66,24 +66,25 @@
             </div>
 
             <!-- App Controls -->
-            <div class="flex flex-row w-full h-4/5 gap-4">
+            <div class="flex flex-col lg:flex-row gap-4 w-full h-full">
 
                 <!-- Schema component section-->
-                <section class="flex flex-col w-1/2 gap-4">
-                    <div class="flex flex-col justify-center items-center w-full h-1/4 bg-base-300 rounded shadow-md">{schema.type   ? schema.type   : 'Click generate...'}</div>
-                    <div class="flex flex-col justify-center items-center w-full h-1/4 bg-base-300 rounded shadow-md">{schema.media  ? schema.media  : 'Click generate...'}</div>
-                    <div class="flex flex-col justify-center items-center w-full h-1/4 bg-base-300 rounded shadow-md">{schema.length ? schema.length : 'Click generate...'}</div>
-                    <div class="flex flex-col justify-center items-center w-full h-1/4 bg-base-300 rounded shadow-md">{schema.struct ? schema.struct : 'Click generate...'}</div>
+                <section class="flex flex-col w-full lg:w-1/2 gap-y-4">
+                    <div class="flex flex-col justify-center items-center w-full h-24 lg:h-1/4 bg-base-300 rounded shadow-md">{schema.type   ? schema.type   : 'Click generate...'}</div>
+                    <div class="flex flex-col justify-center items-center w-full h-24 lg:h-1/4 bg-base-300 rounded shadow-md">{schema.media  ? schema.media  : 'Click generate...'}</div>
+                    <div class="flex flex-col justify-center items-center w-full h-24 lg:h-1/4 bg-base-300 rounded shadow-md">{schema.length ? schema.length : 'Click generate...'}</div>
+                    <div class="flex flex-col justify-center items-center w-full h-24 lg:h-1/4 bg-base-300 rounded shadow-md">{schema.struct ? schema.struct : 'Click generate...'}</div>
                 </section><!-- /Schema component section -->
 
                 <!-- Schema outline section-->
-                <section class="flex flex-col w-1/2">
+                <section class="flex flex-col w-full lg:w-1/2 h-96 lg:h-full">
                     <div class="relative bg-neutral text-neutral-content p-12 rounded text-sm font-mono h-full overflow-y-scroll">
                         <button
                             class="absolute btn btn-sm top-2 right-2 text-xs p-2 bg-primary text-primary-content hover:text-neutral-content rounded"
                             on:click={writeToClipboard}>
                             copy
                         </button>
+            
                         {#if schema.type}
 
                             {@html verboseSchema.replace(/\n/gi, '<br/>')}
@@ -96,10 +97,8 @@
             </div>
 
             <!-- App 'Generate' Button -->
-            <button class="btn w-64 self-end bg-primary text-primary-content hover:text-neutral-content" on:click={handleClick}>generate</button>
+            <button class="btn btn-primary w-full lg:w-64 self-end" on:click={handleClick}>generate</button>
 
         </main>
     </div>
-</div>
-
-
+    <div class="fixed h-full w-full bg-gradient-to-b from-base-100 to-base-300 -z-01"></div>
